@@ -16,7 +16,7 @@ npm install
 Compile the ts files
 
 ```bash
-tsc
+npx tsc
 ```
 
 Start the server

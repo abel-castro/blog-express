@@ -1,3 +1,5 @@
+import { Post } from "./models";
+
 let data = [
     {
         id: 1,
@@ -12,13 +14,17 @@ let data = [
 ];
 
 
-interface Post {
-    id: number;
-    title: string;
-    content: string;
+
+export interface PostsServiceInterface {
+    getAllPosts(): Post[];
+    getPostById(id: number): Post | undefined;
+    createPost(title: string, content: string): Post;
+    updatePost(id: number, updatedPost: Partial<Post>): Post | null;
+    deletePost(id: number): boolean;
 }
 
-export class PostService {
+
+export class PostsService implements PostsServiceInterface {
     private posts: Post[] = data;
 
     getAllPosts(): Post[] {
@@ -53,4 +59,4 @@ export class PostService {
     }
 }
 
-export const postService = new PostService();
+export const postsService = new PostsService();
