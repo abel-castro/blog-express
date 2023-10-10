@@ -1,8 +1,8 @@
 import express from 'express';
 import bodyParser from 'body-parser';
-import apiController from './apiController';
-import initializeAPIRoutes from './apiController';
-import { postsService } from './postsService';
+import apiController from './option1/apiController';
+import initializeAPIRoutes from './option1/apiController';
+import { postsService } from './option1/postsService';
 
 const app = express();
 const PORT = 3000;

@@ -1,5 +1,5 @@
 import request from 'supertest';
-import { Post } from './models';
+import { Post } from '../models';
 import { PostsServiceInterface } from './postsService';
 import express from 'express';
 import initializeAPIRoutes from './apiController';
@@ -9,6 +9,7 @@ import bodyParser from 'body-parser';
 let test_data = [
     { id: 1, title: 'Title 1', content: 'Content 1' },
     { id: 2, title: 'Title 2', content: 'Content 2' },
+    { id: 3, title: 'Title 3', content: 'Content 3' },
 ]
 
 
@@ -57,10 +58,13 @@ setupRoutes(app);
 
 
 describe('API Endpoints', () => {
+
     it('should get all posts', async () => {
         const response = await request(app).get('/api/posts');
         expect(response.status).toBe(200);
         expect(Array.isArray(response.body)).toBe(true);
+        expect(response.body.length).toBe(3);
+
     });
 
     it('should get one post by id', async () => {
