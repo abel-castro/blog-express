@@ -3,6 +3,6 @@ import * as apiController from "./controllers"
 
 const router = Router();
 
-router.get('/', apiController.getAll)
+router.get('/api/posts', apiController.getAll)
 
 export default router;

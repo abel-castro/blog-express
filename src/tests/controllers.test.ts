@@ -1,8 +1,8 @@
-import * as controllers from '../../controllers';
-import { mockNextFunction, mockRequestInputs, mockResponse } from '../utils.test';
+import * as controllers from '../controllers';
+import { mockNextFunction, mockRequestInputs, mockResponse } from './utils';
 
 
-jest.mock('../../postsService', () => ({
+jest.mock('../postService', () => ({
     getAllPosts: jest.fn().mockReturnValue([
         { id: 1, title: 'Post 1' },
         { id: 2, title: 'Post 2' },

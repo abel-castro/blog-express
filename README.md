@@ -27,8 +27,8 @@ node dist/index.js
 
 ## Tests
 
-Run tests with coverage:
+Run tests:
 
 ```bash
-npx jest --coverage
+npx jest
 ```
